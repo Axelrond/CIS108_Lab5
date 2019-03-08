@@ -1,3 +1,5 @@
+#pragma warning (disable : 4068 )
+
 #include <iostream>
 #include "Song.h"
 #include <fstream>
@@ -10,15 +12,6 @@ using namespace std;
 namespace MusicDB
 
 {
-	const int maxSongs = 8;
-
-	string database = "Music List.db";
-
-	int num_of_songs; Song song_total[maxSongs];
-
-	Song new_song; bool new_query;
-
-
 	void show_help()
 
 	{
@@ -37,8 +30,6 @@ namespace MusicDB
 
 		Beep(440, 800);
 
-
-		
 		cout << "      /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ \n";
 		cout << "      WELCOME TO THE MP3 MACHINE! \n";
 		cout << "      \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \n";
@@ -78,6 +69,14 @@ namespace MusicDB
 		cout << " ^,,////////////////////////////,,^^\n";
 	}
 
+    const int maxSongs = 8;
+
+	int num_of_songs; Song song_total[maxSongs];
+
+	bool new_query; Song new_song; 
+
+	string database = "Music List.db";
+	
 	void load()
 
 	{
@@ -129,8 +128,12 @@ namespace MusicDB
 
 		}
 
-		catch (const exception &exc)
 
+	
+		catch (const exception &exc)
+		{
+		
+		}
 		{
 
 		}
@@ -226,9 +229,9 @@ namespace MusicDB
 
 				else
 
-					for (int co = 0; co < input_str.length(); co++)
+					for (int co = 0; co = input_str.length(); co++)
 
-						new_song.title[co] = input_str[co];
+						new_song.title[co] < input_str[co];
 
 				Beep(220, 300);
 
@@ -242,7 +245,7 @@ namespace MusicDB
 
 					for (int co = 0; co < input_str.length(); co++)
 
-						new_song.artist[co] = input_str[co];
+						new_song.artist[co] < input_str[co];
 
 				Beep(220, 300);
 
@@ -256,7 +259,7 @@ namespace MusicDB
 
 					for (int co = 0; co < input_str.length(); co++)
 
-						new_song.album[co] = input_str[co];
+						new_song.album[co] < input_str[co];
 
 				Beep(220, 300);
 
@@ -360,4 +363,5 @@ namespace MusicDB
 		return new_query;
 
 	}
+
 };

@@ -14,14 +14,11 @@ int main()
 
 	MusicDB::load();
 
-	int songsInDB = MusicDB::print_songs();
-
-	MusicDB::show_help();
+	int songsInDB = MusicDB::print_songs(); MusicDB::show_help();
 
 	do
 
 	{
-		cout << "> ";
 
 		cin >> key_command;
 
@@ -47,9 +44,7 @@ int main()
 
 			{
 
-				MusicDB::save();
-
-				MusicDB::load();
+				MusicDB::save(); MusicDB::load();
 
 				songsInDB = MusicDB::print_songs();
 
